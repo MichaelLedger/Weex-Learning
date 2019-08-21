@@ -11,6 +11,8 @@
 #import "WXBanner.h"
 #import "WXImgLoaderDefaultImpl.h"
 #import "WXDebugModule.h"
+#import "WXAudioPlayerProtocol.h"
+#import "WXAVPlayerModule.h"
 
 @interface AppDelegate ()
 
@@ -34,6 +36,7 @@
 //    [WXSDKEngine registerModule:@"mymodule" withClass:[MyWeexModule class]];
     [WXSDKEngine registerComponent:@"banner" withClass:[WXBanner class]];
     [WXSDKEngine registerModule:@"debug" withClass:[WXDebugModule class]];
+    [WXSDKEngine registerModule:@"audio" withClass:[WXAVPlayerModule class]];
     
     //Register the implementation of protocol, optional.
 //    [WXSDKEngine registerHandler:[WXAppNavigationImpl new] withProtocol:@protocol(WXNavigationProtocol)];

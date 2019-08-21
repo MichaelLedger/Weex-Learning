@@ -13,6 +13,8 @@
 		AA71A739230CE4EA004ABFD7 /* WXDebugModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA71A738230CE4EA004ABFD7 /* WXDebugModule.m */; };
 		AA71A73F230D10B6004ABFD7 /* helloworld.js in Resources */ = {isa = PBXBuildFile; fileRef = AA71A73E230D10B6004ABFD7 /* helloworld.js */; };
 		AA71A745230D3C64004ABFD7 /* banner.js in Resources */ = {isa = PBXBuildFile; fileRef = AA71A744230D3C63004ABFD7 /* banner.js */; };
+		AA71A750230D5C92004ABFD7 /* WXAVPlayerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA71A74F230D5C92004ABFD7 /* WXAVPlayerModule.m */; };
+		AA71A754230D6A04004ABFD7 /* audio.js in Resources */ = {isa = PBXBuildFile; fileRef = AA71A753230D6A04004ABFD7 /* audio.js */; };
 		AAED653F230BD5FE00E7481C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED653E230BD5FE00E7481C /* AppDelegate.m */; };
 		AAED6542230BD5FE00E7481C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED6541230BD5FE00E7481C /* ViewController.m */; };
 		AAED6545230BD5FE00E7481C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAED6543230BD5FE00E7481C /* Main.storyboard */; };
@@ -34,6 +36,10 @@
 		AA71A738230CE4EA004ABFD7 /* WXDebugModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXDebugModule.m; sourceTree = "<group>"; };
 		AA71A73E230D10B6004ABFD7 /* helloworld.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = helloworld.js; sourceTree = "<group>"; };
 		AA71A744230D3C63004ABFD7 /* banner.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = banner.js; sourceTree = "<group>"; };
+		AA71A74A230D5767004ABFD7 /* WXAudioPlayerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAudioPlayerProtocol.h; sourceTree = "<group>"; };
+		AA71A74E230D5C92004ABFD7 /* WXAVPlayerModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAVPlayerModule.h; sourceTree = "<group>"; };
+		AA71A74F230D5C92004ABFD7 /* WXAVPlayerModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAVPlayerModule.m; sourceTree = "<group>"; };
+		AA71A753230D6A04004ABFD7 /* audio.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = audio.js; sourceTree = "<group>"; };
 		AAED653A230BD5FE00E7481C /* WeexDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeexDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAED653D230BD5FE00E7481C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAED653E230BD5FE00E7481C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -71,6 +77,7 @@
 		AA71A72D230CDF7D004ABFD7 /* js */ = {
 			isa = PBXGroup;
 			children = (
+				AA71A753230D6A04004ABFD7 /* audio.js */,
 				AA71A744230D3C63004ABFD7 /* banner.js */,
 				AA71A73E230D10B6004ABFD7 /* helloworld.js */,
 				AA71A72B230CD7A9004ABFD7 /* mainpage.js */,
@@ -83,6 +90,8 @@
 			children = (
 				AA71A737230CE4EA004ABFD7 /* WXDebugModule.h */,
 				AA71A738230CE4EA004ABFD7 /* WXDebugModule.m */,
+				AA71A74E230D5C92004ABFD7 /* WXAVPlayerModule.h */,
+				AA71A74F230D5C92004ABFD7 /* WXAVPlayerModule.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -103,6 +112,14 @@
 				AA71A735230CE30A004ABFD7 /* WXImgLoaderDefaultImpl.m */,
 			);
 			path = handler;
+			sourceTree = "<group>";
+		};
+		AA71A746230D5700004ABFD7 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				AA71A74A230D5767004ABFD7 /* WXAudioPlayerProtocol.h */,
+			);
+			path = protocol;
 			sourceTree = "<group>";
 		};
 		AAED6531230BD5FE00E7481C = {
@@ -143,6 +160,7 @@
 		AAED6553230BEAC800E7481C /* weex */ = {
 			isa = PBXGroup;
 			children = (
+				AA71A746230D5700004ABFD7 /* protocol */,
 				AA71A733230CE2BD004ABFD7 /* handler */,
 				AA71A72F230CDF9A004ABFD7 /* component */,
 				AA71A72E230CDF82004ABFD7 /* module */,
@@ -224,6 +242,7 @@
 				AA71A72C230CD7A9004ABFD7 /* mainpage.js in Resources */,
 				AAED6547230BD60100E7481C /* Assets.xcassets in Resources */,
 				AAED6545230BD5FE00E7481C /* Main.storyboard in Resources */,
+				AA71A754230D6A04004ABFD7 /* audio.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +300,7 @@
 				AA71A736230CE30A004ABFD7 /* WXImgLoaderDefaultImpl.m in Sources */,
 				AA71A732230CDFC5004ABFD7 /* WXBanner.m in Sources */,
 				AA71A739230CE4EA004ABFD7 /* WXDebugModule.m in Sources */,
+				AA71A750230D5C92004ABFD7 /* WXAVPlayerModule.m in Sources */,
 				AAED653F230BD5FE00E7481C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

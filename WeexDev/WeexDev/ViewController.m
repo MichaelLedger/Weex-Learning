@@ -40,7 +40,7 @@
     //    NSURL *url = [NSURL URLWithString:@"http://192.168.3.226:8081"]; // $ npm install && npm start
 //    NSURL *url = [NSURL URLWithString:@"http://bsweb.mxrcorp.cn/weex/index.js"]; // dispatch server
     
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"banner" withExtension:@"js"];// $ weex compile src/components/banner.vue build
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"audio" withExtension:@"js"];// $ weex compile src/components/banner.vue build
     [_instance renderWithURL:url options:nil data:nil];
 }
 
