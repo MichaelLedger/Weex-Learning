@@ -1,0 +1,36 @@
+PODS:
+  - SDCycleScrollView (1.80):
+    - SDWebImage (>= 5.0.0)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+  - SocketRocket (0.5.1)
+  - WeexSDK (0.26.0)
+  - WXDevtool (0.24.0):
+    - SocketRocket
+    - WeexSDK
+
+DEPENDENCIES:
+  - SDCycleScrollView (~> 1.80)
+  - SDWebImage (~> 5.0.6)
+  - WeexSDK (~> 0.26.0)
+  - WXDevtool (~> 0.24.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SDCycleScrollView
+    - SDWebImage
+    - SocketRocket
+    - WeexSDK
+    - WXDevtool
+
+SPEC CHECKSUMS:
+  SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  WeexSDK: 55b67d1c411eb28ec1e356f763a335d0ddcc5324
+  WXDevtool: 95b70c73c06fc3299d65bd53ba4b3e0b0087f3cb
+
+PODFILE CHECKSUM: 24f3d224342ee89192c688900b1b91da4c120dcf
+
+COCOAPODS: 1.7.4
