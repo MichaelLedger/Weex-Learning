@@ -12,6 +12,7 @@
 		AA71A736230CE30A004ABFD7 /* WXImgLoaderDefaultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = AA71A735230CE30A004ABFD7 /* WXImgLoaderDefaultImpl.m */; };
 		AA71A739230CE4EA004ABFD7 /* WXDebugModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA71A738230CE4EA004ABFD7 /* WXDebugModule.m */; };
 		AA71A73F230D10B6004ABFD7 /* helloworld.js in Resources */ = {isa = PBXBuildFile; fileRef = AA71A73E230D10B6004ABFD7 /* helloworld.js */; };
+		AA71A745230D3C64004ABFD7 /* banner.js in Resources */ = {isa = PBXBuildFile; fileRef = AA71A744230D3C63004ABFD7 /* banner.js */; };
 		AAED653F230BD5FE00E7481C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED653E230BD5FE00E7481C /* AppDelegate.m */; };
 		AAED6542230BD5FE00E7481C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED6541230BD5FE00E7481C /* ViewController.m */; };
 		AAED6545230BD5FE00E7481C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAED6543230BD5FE00E7481C /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		AA71A737230CE4EA004ABFD7 /* WXDebugModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXDebugModule.h; sourceTree = "<group>"; };
 		AA71A738230CE4EA004ABFD7 /* WXDebugModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXDebugModule.m; sourceTree = "<group>"; };
 		AA71A73E230D10B6004ABFD7 /* helloworld.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = helloworld.js; sourceTree = "<group>"; };
+		AA71A744230D3C63004ABFD7 /* banner.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = banner.js; sourceTree = "<group>"; };
 		AAED653A230BD5FE00E7481C /* WeexDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeexDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAED653D230BD5FE00E7481C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAED653E230BD5FE00E7481C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		AA71A72D230CDF7D004ABFD7 /* js */ = {
 			isa = PBXGroup;
 			children = (
+				AA71A744230D3C63004ABFD7 /* banner.js */,
 				AA71A73E230D10B6004ABFD7 /* helloworld.js */,
 				AA71A72B230CD7A9004ABFD7 /* mainpage.js */,
 			);
@@ -215,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA71A745230D3C64004ABFD7 /* banner.js in Resources */,
 				AA71A73F230D10B6004ABFD7 /* helloworld.js in Resources */,
 				AAED654A230BD60100E7481C /* LaunchScreen.storyboard in Resources */,
 				AA71A72C230CD7A9004ABFD7 /* mainpage.js in Resources */,

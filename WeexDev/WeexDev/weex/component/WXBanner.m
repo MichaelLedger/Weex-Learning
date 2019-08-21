@@ -29,8 +29,9 @@ WX_EXPORT_METHOD(@selector(clearImagesCache))
 - (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance {
     if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {
         // handle your attributes
-        NSArray *images = [attributes objectForKey:@"images"];
-        if (images) _images = images;
+        if ([attributes objectForKey:@"images"]) {
+            _images = [attributes objectForKey:@"images"];
+        }
         
         if ([attributes objectForKey:@"infiniteLoop"]) {
             _infiniteLoop = [WXConvert BOOL:[attributes objectForKey:@"infiniteLoop"]];
@@ -75,6 +76,7 @@ WX_EXPORT_METHOD(@selector(clearImagesCache))
     
 }
 
+#pragma mark - JS修改绑定(v-bind)后的数据才会触发，直接使用.attr来修改不会触发此方法
 - (void)updateAttributes:(NSDictionary *)attributes {
     if ([attributes objectForKey:@"images"]) {
         _images = [attributes objectForKey:@"images"];
@@ -117,12 +119,14 @@ WX_EXPORT_METHOD(@selector(clearImagesCache))
 #pragma mark - SDCycleScrollViewDelegate
 static NSString *scrollEventName = @"didScroll";
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index {
-    [self fireEvent:scrollEventName params:@{@"index" : @(index)} domChanges:nil];
+    // parameter type is not right,it should be array ,map or string
+    [self fireEvent:scrollEventName params:@{@"index" : [NSString stringWithFormat:@"%ld", (long)index]} domChanges:nil];
 }
 
-static NSString *selectEventName = @"disSelect";
+static NSString *selectEventName = @"didSelect";
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
-    [self fireEvent:selectEventName params:@{@"index" : @(index)} domChanges:nil];
+    // parameter type is not right,it should be array ,map or string
+    [self fireEvent:selectEventName params:@{@"index" : [NSString stringWithFormat:@"%ld", (long)index]} domChanges:nil];
 }
 
 @end

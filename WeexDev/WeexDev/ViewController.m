@@ -36,10 +36,11 @@
     _instance.renderFinish = ^ (UIView *view) {
         //process renderFinish
     };
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"helloworld" withExtension:@"js"];// $ weex compile src/index.vue build
-//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"mainpage" withExtension:@"js"];
+//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"helloworld" withExtension:@"js"];// $ weex compile src/index.vue build
     //    NSURL *url = [NSURL URLWithString:@"http://192.168.3.226:8081"]; // $ npm install && npm start
 //    NSURL *url = [NSURL URLWithString:@"http://bsweb.mxrcorp.cn/weex/index.js"]; // dispatch server
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"banner" withExtension:@"js"];// $ weex compile src/components/banner.vue build
     [_instance renderWithURL:url options:nil data:nil];
 }
 
@@ -47,6 +48,5 @@
     NSLog(@"%s", __func__);
     [_instance destroyInstance];
 }
-
 
 @end
