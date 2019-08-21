@@ -15,7 +15,7 @@ Make sure that /usr/local/bin is in your $PATH.
 $ which node
 /Users/mxr/.nvm/versions/node/v7.10.0/bin/node
 ```
-上述打印标明之前使用nvm管理node，故使用一下命令升级node至稳定版本：
+上述打印标明之前使用nvm管理node，故使用以下命令升级node至稳定版本：
 ```
 $ nvm install stable
 Downloading and installing node v12.9.0...
