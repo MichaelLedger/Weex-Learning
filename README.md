@@ -1,6 +1,6 @@
 # Introduction
 
-请确保你已经安装了 ![Node.js](https://nodejs.org/en/)
+请确保你已经安装了 [Node.js](https://nodejs.org/en/)
 
 ```
 This package has installed:
