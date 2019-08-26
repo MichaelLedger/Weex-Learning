@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA6070DF2313E0CE0009A1F7 /* WXAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6070DE2313E0CE0009A1F7 /* WXAudioPlayer.m */; };
+		AA6070E22313F6270009A1F7 /* icon_player_progress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA6070E12313F6260009A1F7 /* icon_player_progress@2x.png */; };
 		AA71A72C230CD7A9004ABFD7 /* mainpage.js in Resources */ = {isa = PBXBuildFile; fileRef = AA71A72B230CD7A9004ABFD7 /* mainpage.js */; };
 		AA71A732230CDFC5004ABFD7 /* WXBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AA71A731230CDFC5004ABFD7 /* WXBanner.m */; };
 		AA71A736230CE30A004ABFD7 /* WXImgLoaderDefaultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = AA71A735230CE30A004ABFD7 /* WXImgLoaderDefaultImpl.m */; };
@@ -27,6 +29,9 @@
 /* Begin PBXFileReference section */
 		0E01CAA489F6F611ACE0A43D /* Pods-WeexDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDev.debug.xcconfig"; path = "Target Support Files/Pods-WeexDev/Pods-WeexDev.debug.xcconfig"; sourceTree = "<group>"; };
 		36E4B8E89627542741E2E90C /* Pods-WeexDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDev.release.xcconfig"; path = "Target Support Files/Pods-WeexDev/Pods-WeexDev.release.xcconfig"; sourceTree = "<group>"; };
+		AA6070DD2313E0CE0009A1F7 /* WXAudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAudioPlayer.h; sourceTree = "<group>"; };
+		AA6070DE2313E0CE0009A1F7 /* WXAudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAudioPlayer.m; sourceTree = "<group>"; };
+		AA6070E12313F6260009A1F7 /* icon_player_progress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_player_progress@2x.png"; sourceTree = "<group>"; };
 		AA71A72B230CD7A9004ABFD7 /* mainpage.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = mainpage.js; sourceTree = "<group>"; };
 		AA71A730230CDFC5004ABFD7 /* WXBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXBanner.h; sourceTree = "<group>"; };
 		AA71A731230CDFC5004ABFD7 /* WXBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXBanner.m; sourceTree = "<group>"; };
@@ -74,6 +79,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AA6070E02313F61B0009A1F7 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA6070E12313F6260009A1F7 /* icon_player_progress@2x.png */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		AA71A72D230CDF7D004ABFD7 /* js */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +114,8 @@
 			children = (
 				AA71A730230CDFC5004ABFD7 /* WXBanner.h */,
 				AA71A731230CDFC5004ABFD7 /* WXBanner.m */,
+				AA6070DD2313E0CE0009A1F7 /* WXAudioPlayer.h */,
+				AA6070DE2313E0CE0009A1F7 /* WXAudioPlayer.m */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -143,6 +158,7 @@
 		AAED653C230BD5FE00E7481C /* WeexDev */ = {
 			isa = PBXGroup;
 			children = (
+				AA6070E02313F61B0009A1F7 /* resources */,
 				AAED6553230BEAC800E7481C /* weex */,
 				AAED653D230BD5FE00E7481C /* AppDelegate.h */,
 				AAED653E230BD5FE00E7481C /* AppDelegate.m */,
@@ -237,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA71A745230D3C64004ABFD7 /* banner.js in Resources */,
+				AA6070E22313F6270009A1F7 /* icon_player_progress@2x.png in Resources */,
 				AA71A73F230D10B6004ABFD7 /* helloworld.js in Resources */,
 				AAED654A230BD60100E7481C /* LaunchScreen.storyboard in Resources */,
 				AA71A72C230CD7A9004ABFD7 /* mainpage.js in Resources */,
@@ -295,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6070DF2313E0CE0009A1F7 /* WXAudioPlayer.m in Sources */,
 				AAED6542230BD5FE00E7481C /* ViewController.m in Sources */,
 				AAED654D230BD60100E7481C /* main.m in Sources */,
 				AA71A736230CE30A004ABFD7 /* WXImgLoaderDefaultImpl.m in Sources */,

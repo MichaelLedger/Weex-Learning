@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <banner ref="banner" class="banner" :infiniteLoop="infiniteLoop" :autoSroll="autoSroll" v-bind:images="images" @didSelect="bannerDidSelect"></banner>
+    <audio-player ref="audioplayer" class="audioplayer"></audio-player>
   </div>
 </template>
 
@@ -79,5 +80,11 @@ export default {
     /* weex是以750个像素点作为默认页面宽度的 */
     width: 750px;
     height: 400x;
+  }
+  .audioplayer {
+    margin: 30px 0px 30px 0px;
+    /* weex是以750个像素点作为默认页面宽度的 */
+    width: 750px;
+    height: 50x;
   }
 </style>

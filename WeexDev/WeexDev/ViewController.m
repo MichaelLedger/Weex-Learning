@@ -24,7 +24,7 @@
     _instance = [[WXSDKInstance alloc] init];
     _instance.viewController = self;
     _instance.frame = self.view.frame;
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(self) weakSelf = self;
     _instance.onCreate = ^(UIView *view) {
         [weakSelf.weexView removeFromSuperview];
         weakSelf.weexView = view;
@@ -39,8 +39,10 @@
 //    NSURL *url = [[NSBundle mainBundle] URLForResource:@"helloworld" withExtension:@"js"];// $ weex compile src/index.vue build
     //    NSURL *url = [NSURL URLWithString:@"http://192.168.3.226:8081"]; // $ npm install && npm start
 //    NSURL *url = [NSURL URLWithString:@"http://bsweb.mxrcorp.cn/weex/index.js"]; // dispatch server
-    
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"audio" withExtension:@"js"];// $ weex compile src/components/banner.vue build
+    
+//    NSURL *url = [NSURL URLWithString:@"http://192.168.0.125:10133/PocketStoryDetail.js"];
+//    NSURL *url = [NSURL URLWithString:@"http://192.168.0.125:10133/PocketStory.js"];
     [_instance renderWithURL:url options:nil data:nil];
 }
 

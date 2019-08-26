@@ -13,6 +13,7 @@
 #import "WXDebugModule.h"
 #import "WXAudioPlayerProtocol.h"
 #import "WXAVPlayerModule.h"
+#import "WXAudioPlayer.h"
 
 @interface AppDelegate ()
 
@@ -35,6 +36,7 @@
 //    [WXSDKEngine registerComponent:@"myview" withClass:[MyViewComponent class]];
 //    [WXSDKEngine registerModule:@"mymodule" withClass:[MyWeexModule class]];
     [WXSDKEngine registerComponent:@"banner" withClass:[WXBanner class]];
+    [WXSDKEngine registerComponent:@"audio-player" withClass:[WXAudioPlayer class]];
     [WXSDKEngine registerModule:@"debug" withClass:[WXDebugModule class]];
     [WXSDKEngine registerModule:@"audio" withClass:[WXAVPlayerModule class]];
     
