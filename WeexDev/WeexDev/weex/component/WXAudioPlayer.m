@@ -48,7 +48,7 @@
     _timeSlider.minimumValue = 0;
     [_timeSlider setMinimumTrackTintColor:RGBHEXA(0x999999, 1)];
     [_timeSlider setMaximumTrackTintColor:RGBHEXA(0x999999, 0.5)];
-    [_timeSlider setThumbImage:[UIImage imageNamed:@"icon_player_progress"] forState:UIControlStateNormal];
+    [_timeSlider setThumbImage:[UIImage imageNamed:@"icon_read_progress"] forState:UIControlStateNormal];
     [self addSubview:_timeSlider];
     [_timeSlider addTarget:self action:@selector(sliderChanging:) forControlEvents:UIControlEventValueChanged];
     [_timeSlider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventTouchUpInside];

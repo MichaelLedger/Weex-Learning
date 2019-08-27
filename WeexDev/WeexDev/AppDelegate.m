@@ -7,13 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import <WeexSDK/WeexSDK.h>
-#import "WXBanner.h"
-#import "WXImgLoaderDefaultImpl.h"
-#import "WXDebugModule.h"
-#import "WXAudioPlayerProtocol.h"
-#import "WXAVPlayerModule.h"
-#import "WXAudioPlayer.h"
+#import "WXProxy.h"
+#import "WXCustomViewController.h"
+#import <WeexSDK/WXBaseViewController.h>
 
 @interface AppDelegate ()
 
@@ -23,29 +19,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [WXProxy registerWeex];
     
-    // App configuration
-    [WXAppConfiguration setAppGroup:@"Your app group"];
-    [WXAppConfiguration setAppName:@"Your app name"];
-    [WXAppConfiguration setAppVersion:@"Your app version"];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     
-    //Initialize WeexSDK
-    [WXSDKEngine initSDKEnvironment];
+    //    NSURL *url = [[NSBundle mainBundle] URLForResource:@"helloworld" withExtension:@"js"];// $ weex compile src/index.vue build
+    //    NSURL *url = [NSURL URLWithString:@"http://192.168.3.226:8081"]; // $ npm install && npm start
+    //    NSURL *url = [NSURL URLWithString:@"http://bsweb.mxrcorp.cn/weex/index.js"]; // dispatch server
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"audio" withExtension:@"js"];// $ weex compile src/components/banner.vue build
+    //    NSURL *url = [NSURL URLWithString:@"http://192.168.0.125:10133/PocketStoryDetail.js"];
+    //    NSURL *url = [NSURL URLWithString:@"http://192.168.0.125:10133/PocketStory.js"];
     
-    //Register custom modules and components, optional.
-//    [WXSDKEngine registerComponent:@"myview" withClass:[MyViewComponent class]];
-//    [WXSDKEngine registerModule:@"mymodule" withClass:[MyWeexModule class]];
-    [WXSDKEngine registerComponent:@"banner" withClass:[WXBanner class]];
-    [WXSDKEngine registerComponent:@"audio-player" withClass:[WXAudioPlayer class]];
-    [WXSDKEngine registerModule:@"debug" withClass:[WXDebugModule class]];
-    [WXSDKEngine registerModule:@"audio" withClass:[WXAVPlayerModule class]];
-    
-    //Register the implementation of protocol, optional.
-//    [WXSDKEngine registerHandler:[WXAppNavigationImpl new] withProtocol:@protocol(WXNavigationProtocol)];
-    [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
-    
-    //Set the log level, optional
-    [WXLog setLogLevel: WXLogLevelWarning];
+//    WXBaseViewController *weexVc = [[WXBaseViewController alloc] initWithSourceURL:url];
+    WXCustomViewController *weexVc = [[WXCustomViewController alloc] initWithSourceURL:url];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:weexVc];
     
     return YES;
 }

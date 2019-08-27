@@ -17,8 +17,11 @@
 		AA71A745230D3C64004ABFD7 /* banner.js in Resources */ = {isa = PBXBuildFile; fileRef = AA71A744230D3C63004ABFD7 /* banner.js */; };
 		AA71A750230D5C92004ABFD7 /* WXAVPlayerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA71A74F230D5C92004ABFD7 /* WXAVPlayerModule.m */; };
 		AA71A754230D6A04004ABFD7 /* audio.js in Resources */ = {isa = PBXBuildFile; fileRef = AA71A753230D6A04004ABFD7 /* audio.js */; };
+		AABA063C2314BF0B00433E80 /* WXProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = AABA063B2314BF0B00433E80 /* WXProxy.m */; };
+		AABA063F2314C1A500433E80 /* icon_read_progress@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABA063D2314C1A500433E80 /* icon_read_progress@3x.png */; };
+		AABA06402314C1A500433E80 /* icon_read_progress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABA063E2314C1A500433E80 /* icon_read_progress@2x.png */; };
+		AABA06502314D12000433E80 /* WXCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABA064F2314D12000433E80 /* WXCustomViewController.m */; };
 		AAED653F230BD5FE00E7481C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED653E230BD5FE00E7481C /* AppDelegate.m */; };
-		AAED6542230BD5FE00E7481C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED6541230BD5FE00E7481C /* ViewController.m */; };
 		AAED6545230BD5FE00E7481C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAED6543230BD5FE00E7481C /* Main.storyboard */; };
 		AAED6547230BD60100E7481C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAED6546230BD60100E7481C /* Assets.xcassets */; };
 		AAED654A230BD60100E7481C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAED6548230BD60100E7481C /* LaunchScreen.storyboard */; };
@@ -45,11 +48,15 @@
 		AA71A74E230D5C92004ABFD7 /* WXAVPlayerModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAVPlayerModule.h; sourceTree = "<group>"; };
 		AA71A74F230D5C92004ABFD7 /* WXAVPlayerModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAVPlayerModule.m; sourceTree = "<group>"; };
 		AA71A753230D6A04004ABFD7 /* audio.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = audio.js; sourceTree = "<group>"; };
+		AABA063A2314BF0B00433E80 /* WXProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXProxy.h; sourceTree = "<group>"; };
+		AABA063B2314BF0B00433E80 /* WXProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXProxy.m; sourceTree = "<group>"; };
+		AABA063D2314C1A500433E80 /* icon_read_progress@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_read_progress@3x.png"; sourceTree = "<group>"; };
+		AABA063E2314C1A500433E80 /* icon_read_progress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_read_progress@2x.png"; sourceTree = "<group>"; };
+		AABA064E2314D12000433E80 /* WXCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXCustomViewController.h; sourceTree = "<group>"; };
+		AABA064F2314D12000433E80 /* WXCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXCustomViewController.m; sourceTree = "<group>"; };
 		AAED653A230BD5FE00E7481C /* WeexDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeexDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAED653D230BD5FE00E7481C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAED653E230BD5FE00E7481C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AAED6540230BD5FE00E7481C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AAED6541230BD5FE00E7481C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AAED6544230BD5FE00E7481C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAED6546230BD60100E7481C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAED6549230BD60100E7481C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +89,8 @@
 		AA6070E02313F61B0009A1F7 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				AABA063E2314C1A500433E80 /* icon_read_progress@2x.png */,
+				AABA063D2314C1A500433E80 /* icon_read_progress@3x.png */,
 				AA6070E12313F6260009A1F7 /* icon_player_progress@2x.png */,
 			);
 			path = resources;
@@ -137,6 +146,24 @@
 			path = protocol;
 			sourceTree = "<group>";
 		};
+		AABA06392314BEE800433E80 /* proxy */ = {
+			isa = PBXGroup;
+			children = (
+				AABA063A2314BF0B00433E80 /* WXProxy.h */,
+				AABA063B2314BF0B00433E80 /* WXProxy.m */,
+			);
+			path = proxy;
+			sourceTree = "<group>";
+		};
+		AABA064D2314D0ED00433E80 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				AABA064E2314D12000433E80 /* WXCustomViewController.h */,
+				AABA064F2314D12000433E80 /* WXCustomViewController.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		AAED6531230BD5FE00E7481C = {
 			isa = PBXGroup;
 			children = (
@@ -158,12 +185,11 @@
 		AAED653C230BD5FE00E7481C /* WeexDev */ = {
 			isa = PBXGroup;
 			children = (
+				AABA06392314BEE800433E80 /* proxy */,
 				AA6070E02313F61B0009A1F7 /* resources */,
 				AAED6553230BEAC800E7481C /* weex */,
 				AAED653D230BD5FE00E7481C /* AppDelegate.h */,
 				AAED653E230BD5FE00E7481C /* AppDelegate.m */,
-				AAED6540230BD5FE00E7481C /* ViewController.h */,
-				AAED6541230BD5FE00E7481C /* ViewController.m */,
 				AAED6543230BD5FE00E7481C /* Main.storyboard */,
 				AAED6546230BD60100E7481C /* Assets.xcassets */,
 				AAED6548230BD60100E7481C /* LaunchScreen.storyboard */,
@@ -176,6 +202,7 @@
 		AAED6553230BEAC800E7481C /* weex */ = {
 			isa = PBXGroup;
 			children = (
+				AABA064D2314D0ED00433E80 /* view */,
 				AA71A746230D5700004ABFD7 /* protocol */,
 				AA71A733230CE2BD004ABFD7 /* handler */,
 				AA71A72F230CDF9A004ABFD7 /* component */,
@@ -252,12 +279,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABA06402314C1A500433E80 /* icon_read_progress@2x.png in Resources */,
 				AA71A745230D3C64004ABFD7 /* banner.js in Resources */,
 				AA6070E22313F6270009A1F7 /* icon_player_progress@2x.png in Resources */,
 				AA71A73F230D10B6004ABFD7 /* helloworld.js in Resources */,
 				AAED654A230BD60100E7481C /* LaunchScreen.storyboard in Resources */,
 				AA71A72C230CD7A9004ABFD7 /* mainpage.js in Resources */,
 				AAED6547230BD60100E7481C /* Assets.xcassets in Resources */,
+				AABA063F2314C1A500433E80 /* icon_read_progress@3x.png in Resources */,
 				AAED6545230BD5FE00E7481C /* Main.storyboard in Resources */,
 				AA71A754230D6A04004ABFD7 /* audio.js in Resources */,
 			);
@@ -312,9 +341,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABA063C2314BF0B00433E80 /* WXProxy.m in Sources */,
 				AA6070DF2313E0CE0009A1F7 /* WXAudioPlayer.m in Sources */,
-				AAED6542230BD5FE00E7481C /* ViewController.m in Sources */,
 				AAED654D230BD60100E7481C /* main.m in Sources */,
+				AABA06502314D12000433E80 /* WXCustomViewController.m in Sources */,
 				AA71A736230CE30A004ABFD7 /* WXImgLoaderDefaultImpl.m in Sources */,
 				AA71A732230CDFC5004ABFD7 /* WXBanner.m in Sources */,
 				AA71A739230CE4EA004ABFD7 /* WXDebugModule.m in Sources */,

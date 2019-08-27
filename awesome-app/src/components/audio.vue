@@ -2,6 +2,9 @@
   <div class="wrapper">
     <banner ref="banner" class="banner" :infiniteLoop="infiniteLoop" :autoSroll="autoSroll" v-bind:images="images" @didSelect="bannerDidSelect"></banner>
     <audio-player ref="audioplayer" class="audioplayer"></audio-player>
+    <div class="btn" @click="handleClick">
+      <text class="btn-text">click</text>
+    </div>
   </div>
 </template>
 
@@ -64,6 +67,15 @@ export default {
       } else if (parseInt(e.index) === 2) {
         weex.requireModule("audio").play('https://github.com/MichaelLedger/MichaelLedger.github.io/raw/master/bbc/sound/bbc20181207_3945526LE6.mp3');
       }
+    },
+    handleClick: function(e) {
+      var navigator = weex.requireModule('navigator')
+      navigator.push({
+        url: 'http://192.168.0.125:10133/PocketStory.js',
+        animated: "true"
+      }, event => {
+        console.log('callback: ', event)
+      })
     }
   }
 }
@@ -86,5 +98,16 @@ export default {
     /* weex是以750个像素点作为默认页面宽度的 */
     width: 750px;
     height: 50x;
+  }
+  .btn {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #0088fb;
+  margin-bottom: 20px;
+  }
+  .btn-text {
+  color: #fff;
   }
 </style>
