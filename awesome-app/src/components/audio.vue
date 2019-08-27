@@ -19,12 +19,15 @@ export default {
     }
   },
   created: function () {
-    weex.requireModule("debug").alert("created");
+    // weex.requireModule("debug").alert("created");
     weex.requireModule("debug").print("created");
     var globalEvent = weex.requireModule("globalEvent");
     globalEvent.addEventListener("playing", function(e) {
       weex.requireModule("debug").print(e);
     });
+    weex.requireModule('user').getUserInfo(function(e) {
+       weex.requireModule("debug").alert(JSON.stringify(e));
+    })
   },
   mounted: function () {
     var banner = this.$refs.banner;

@@ -21,6 +21,7 @@
 		AABA063F2314C1A500433E80 /* icon_read_progress@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABA063D2314C1A500433E80 /* icon_read_progress@3x.png */; };
 		AABA06402314C1A500433E80 /* icon_read_progress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABA063E2314C1A500433E80 /* icon_read_progress@2x.png */; };
 		AABA06502314D12000433E80 /* WXCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABA064F2314D12000433E80 /* WXCustomViewController.m */; };
+		AABA06592315166900433E80 /* WXUserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AABA06582315166900433E80 /* WXUserModule.m */; };
 		AAED653F230BD5FE00E7481C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED653E230BD5FE00E7481C /* AppDelegate.m */; };
 		AAED6545230BD5FE00E7481C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAED6543230BD5FE00E7481C /* Main.storyboard */; };
 		AAED6547230BD60100E7481C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAED6546230BD60100E7481C /* Assets.xcassets */; };
@@ -54,6 +55,8 @@
 		AABA063E2314C1A500433E80 /* icon_read_progress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_read_progress@2x.png"; sourceTree = "<group>"; };
 		AABA064E2314D12000433E80 /* WXCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXCustomViewController.h; sourceTree = "<group>"; };
 		AABA064F2314D12000433E80 /* WXCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXCustomViewController.m; sourceTree = "<group>"; };
+		AABA06572315166900433E80 /* WXUserModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXUserModule.h; sourceTree = "<group>"; };
+		AABA06582315166900433E80 /* WXUserModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXUserModule.m; sourceTree = "<group>"; };
 		AAED653A230BD5FE00E7481C /* WeexDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeexDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAED653D230BD5FE00E7481C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAED653E230BD5FE00E7481C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				AA71A738230CE4EA004ABFD7 /* WXDebugModule.m */,
 				AA71A74E230D5C92004ABFD7 /* WXAVPlayerModule.h */,
 				AA71A74F230D5C92004ABFD7 /* WXAVPlayerModule.m */,
+				AABA06572315166900433E80 /* WXUserModule.h */,
+				AABA06582315166900433E80 /* WXUserModule.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				AAED654D230BD60100E7481C /* main.m in Sources */,
 				AABA06502314D12000433E80 /* WXCustomViewController.m in Sources */,
 				AA71A736230CE30A004ABFD7 /* WXImgLoaderDefaultImpl.m in Sources */,
+				AABA06592315166900433E80 /* WXUserModule.m in Sources */,
 				AA71A732230CDFC5004ABFD7 /* WXBanner.m in Sources */,
 				AA71A739230CE4EA004ABFD7 /* WXDebugModule.m in Sources */,
 				AA71A750230D5C92004ABFD7 /* WXAVPlayerModule.m in Sources */,

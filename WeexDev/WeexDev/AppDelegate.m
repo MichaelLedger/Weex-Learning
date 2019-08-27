@@ -32,8 +32,8 @@
     //    NSURL *url = [NSURL URLWithString:@"http://192.168.0.125:10133/PocketStoryDetail.js"];
     //    NSURL *url = [NSURL URLWithString:@"http://192.168.0.125:10133/PocketStory.js"];
     
-//    WXBaseViewController *weexVc = [[WXBaseViewController alloc] initWithSourceURL:url];
-    WXCustomViewController *weexVc = [[WXCustomViewController alloc] initWithSourceURL:url];
+    WXBaseViewController *weexVc = [[WXBaseViewController alloc] initWithSourceURL:url];
+//    WXCustomViewController *weexVc = [[WXCustomViewController alloc] initWithSourceURL:url];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:weexVc];
     
     return YES;
