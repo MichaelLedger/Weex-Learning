@@ -13,14 +13,42 @@
 
 @implementation WXAudioPlayer
 
+WX_EXPORT_METHOD(@selector(play:))
+WX_EXPORT_METHOD(@selector(pause))
+
 - (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance {
     if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) {
+        _playerModule = [WXAVPlayerModule new];
+        _playerModule.weexInstance = weexInstance;//weex实例传递
+        __weak __typeof(self) weakSelf = self;
+        _playerModule.callback = ^(NSDictionary *params) {
+            WXAudioPlayerView *player = (WXAudioPlayerView *)weakSelf.view;
+            [player refreshSlider:params];
+        };
     }
     return self;
 }
 
 - (UIView *)loadView {
-    return [WXAudioPlayerView new];
+    WXAudioPlayerView *playerView = [WXAudioPlayerView new];
+    __weak __typeof(self) weakSelf = self;
+    playerView.callback = ^(float value) {
+        WXAudioPlayerView *player = (WXAudioPlayerView *)weakSelf.view;
+        [weakSelf.playerModule.player seekToTime:CMTimeMakeWithSeconds(player.timeSlider.value, NSEC_PER_SEC) toleranceBefore:CMTimeMake(1, 1000) toleranceAfter:CMTimeMake(1, 1000) completionHandler:^(BOOL finished) {
+            player.isDragging = NO;//跳转完毕后才根据播放进度刷新进度条
+            [weakSelf.playerModule.player play];//拖拽进度条后自动开始播放
+        }];
+    };
+    return playerView;
+}
+
+#pragma mark - WXAudioPlayerProtocol
+- (void)play:(NSString *)audioUrl {
+    [_playerModule play:audioUrl];
+}
+
+- (void)pause {
+    [_playerModule pause];
 }
 
 @end
@@ -44,7 +72,7 @@
     
     _timeSlider = [UISlider new];
     _timeSlider.translatesAutoresizingMaskIntoConstraints = NO;
-    _timeSlider.maximumValue = 120;
+    _timeSlider.maximumValue = 0;
     _timeSlider.minimumValue = 0;
     [_timeSlider setMinimumTrackTintColor:RGBHEXA(0x999999, 1)];
     [_timeSlider setMaximumTrackTintColor:RGBHEXA(0x999999, 0.5)];
@@ -55,7 +83,7 @@
     
     _endTimeLabel = [UILabel new];
     _endTimeLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    _endTimeLabel.text = @"02:00";
+    _endTimeLabel.text = @"00:00";
     _endTimeLabel.textColor = RGBHEX(0x333333);
     _endTimeLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:_endTimeLabel];
@@ -76,16 +104,38 @@
 }
 
 - (void)sliderChanging:(UISlider *)slider {
-    NSInteger seconds = [[NSString stringWithFormat:@"%f", slider.value] integerValue];
+    _isDragging = YES;
+    [self refreshSlider];
+}
+
+- (void)refreshSlider {
+    NSInteger seconds = [[NSString stringWithFormat:@"%f", _timeSlider.value] integerValue];
     if (seconds >= 3600) {
         _startTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", seconds/3600,seconds%3600/60, seconds%60];
     } else {
         _startTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", seconds/60, seconds%60];
     }
+    NSInteger duration = [[NSString stringWithFormat:@"%f", _timeSlider.maximumValue] integerValue];
+    if (duration >= 3600) {
+        _endTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", duration/3600,duration%3600/60, duration%60];
+    } else {
+        _endTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", duration/60, duration%60];
+    }
+}
+
+- (void)refreshSlider:(NSDictionary *)params {
+    _timeSlider.maximumValue = [params[@"total"] floatValue];
+    if (!_isDragging) {
+        _timeSlider.value = [params[@"current"] floatValue];
+    }
+    [self refreshSlider];
 }
 
 - (void)sliderChanged:(UISlider *)slider {
     NSLog(@"%f", slider.value);
+    if (self.callback) {
+        self.callback(slider.value);
+    }
 }
 
 

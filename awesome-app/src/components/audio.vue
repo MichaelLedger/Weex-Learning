@@ -2,8 +2,17 @@
   <div class="wrapper">
     <banner ref="banner" class="banner" :infiniteLoop="infiniteLoop" :autoSroll="autoSroll" v-bind:images="images" @didSelect="bannerDidSelect"></banner>
     <audio-player ref="audioplayer" class="audioplayer"></audio-player>
-    <div class="btn" @click="handleClick">
-      <text class="btn-text">click</text>
+    <div class="btn" @click="handlePlay">
+      <text class="btn-text">play</text>
+    </div>
+    <div class="btn" @click="handlePause">
+      <text class="btn-text">pause</text>
+    </div>
+    <div class="btn" @click="handleSkip">
+      <text class="btn-text">skip</text>
+    </div>
+    <div class="btn" @click="handlePush">
+      <text class="btn-text">push</text>
     </div>
   </div>
 </template>
@@ -15,7 +24,9 @@ export default {
     return {
       infiniteLoop: false,
       autoSroll: false,
-      images: []
+      images: [],
+      currentIndex: 0,
+      musicList: ['https://github.com/MichaelLedger/MichaelLedger.github.io/raw/master/bbc/sound/bbc0102_2509557LDq.mp3', 'https://michaelledger.github.io/blog/music/resources/china/gaobaiqiqiu/gaobaiqiqiu.mp3', 'https://michaelledger.github.io/blog/music/resources/korea/mydestiny/My_Destiny-Lyn.mp3'],
     }
   },
   created: function () {
@@ -23,7 +34,23 @@ export default {
     weex.requireModule("debug").print("created");
     var globalEvent = weex.requireModule("globalEvent");
     globalEvent.addEventListener("playing", function(e) {
-      weex.requireModule("debug").print(e);
+      weex.requireModule("debug").print("playing:" + JSON.stringify(e));
+    });
+    var that = this;
+    globalEvent.addEventListener("auidoPlayerFinished", function(e) {
+      weex.requireModule("debug").print("auidoPlayerFinished:" + JSON.stringify(e));
+      //自动播放下一曲
+      that.handleSkip();
+    });
+    // 应用被前台的时候触发
+    globalEvent.addEventListener("WXApplicationDidBecomeActiveEvent", function(e) {
+      weex.requireModule("debug").print("WXApplicationDidBecomeActiveEvent:" + JSON.stringify(e));
+      that.handlePlay();
+    });
+    // 应用即将被后台时候触发
+    globalEvent.addEventListener("WXApplicationWillResignActiveEvent", function(e) {
+      weex.requireModule("debug").print("WXApplicationWillResignActiveEvent:" + JSON.stringify(e));
+      that.handlePause();
     });
     weex.requireModule('user').getUserInfo(function(e) {
        weex.requireModule("debug").alert(JSON.stringify(e));
@@ -63,15 +90,29 @@ export default {
     bannerDidSelect: function(e) {
       // weex.requireModule("debug").alert(JSON.stringify(e));
       weex.requireModule("debug").print(e.index);
-      if (parseInt(e.index) === 0) {
-        weex.requireModule("audio").play('https://github.com/MichaelLedger/MichaelLedger.github.io/raw/master/bbc/sound/bbc0102_2509557LDq.mp3');
-      } else if (parseInt(e.index) === 1) {
-        weex.requireModule("audio").play('https://github.com/MichaelLedger/MichaelLedger.github.io/raw/master/bbc/sound/bbc190213_30212755Av.mp3');
-      } else if (parseInt(e.index) === 2) {
-        weex.requireModule("audio").play('https://github.com/MichaelLedger/MichaelLedger.github.io/raw/master/bbc/sound/bbc20181207_3945526LE6.mp3');
-      }
+      // if (parseInt(e.index) === 0) {
+      //   weex.requireModule("audio-player").play('https://github.com/MichaelLedger/MichaelLedger.github.io/raw/master/bbc/sound/bbc0102_2509557LDq.mp3');
+      // } else if (parseInt(e.index) === 1) {
+      //   weex.requireModule("audio-player").play('https://michaelledger.github.io/blog/music/resources/china/gaobaiqiqiu/gaobaiqiqiu.mp3');
+      // } else if (parseInt(e.index) === 2) {
+      //   weex.requireModule("audio-player").play('https://michaelledger.github.io/blog/music/resources/korea/mydestiny/My_Destiny-Lyn.mp3');
+      // }
     },
-    handleClick: function(e) {
+    handlePlay: function(e) {
+      let music = this.musicList[this.currentIndex];
+      this.$refs.audioplayer.play(music);
+      weex.requireModule("debug").alert(music);
+    },
+    handlePause: function(e) {
+      this.$refs.audioplayer.pause();
+    },
+    handleSkip: function(e) {
+      this.currentIndex = this.currentIndex + 1 >= this.musicList.length ? 0 : this.currentIndex + 1;
+      let music = this.musicList[this.currentIndex];
+      this.$refs.audioplayer.play(music);
+      weex.requireModule("debug").alert(music);
+    },
+    handlePush: function(e) {
       var navigator = weex.requireModule('navigator')
       navigator.push({
         url: 'http://192.168.0.125:10133/PocketStory.js',
@@ -79,7 +120,7 @@ export default {
       }, event => {
         console.log('callback: ', event)
       })
-    }
+    },
   }
 }
 </script>

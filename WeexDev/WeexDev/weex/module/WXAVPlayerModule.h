@@ -10,12 +10,16 @@
 #import "WXAudioPlayerProtocol.h"
 #import <AVFoundation/AVFoundation.h>
 
+typedef void(^WXAVPlayerModuleCallback)(NSDictionary * _Nonnull params);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WXAVPlayerModule : NSObject <WXAudioPlayerProtocol>
 
 @property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, strong) id progressObserver;
+
+@property (nonatomic, copy) WXAVPlayerModuleCallback callback;
 
 @end
 

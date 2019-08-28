@@ -12,6 +12,5 @@
 
 - (void)play:(NSString *)audioUrl;
 - (void)pause;
-- (void)resume;
 
 @end

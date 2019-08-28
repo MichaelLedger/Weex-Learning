@@ -190,8 +190,6 @@
 		AAED653C230BD5FE00E7481C /* WeexDev */ = {
 			isa = PBXGroup;
 			children = (
-				AABA06392314BEE800433E80 /* proxy */,
-				AA6070E02313F61B0009A1F7 /* resources */,
 				AAED6553230BEAC800E7481C /* weex */,
 				AAED653D230BD5FE00E7481C /* AppDelegate.h */,
 				AAED653E230BD5FE00E7481C /* AppDelegate.m */,
@@ -207,6 +205,8 @@
 		AAED6553230BEAC800E7481C /* weex */ = {
 			isa = PBXGroup;
 			children = (
+				AABA06392314BEE800433E80 /* proxy */,
+				AA6070E02313F61B0009A1F7 /* resources */,
 				AABA064D2314D0ED00433E80 /* view */,
 				AA71A746230D5700004ABFD7 /* protocol */,
 				AA71A733230CE2BD004ABFD7 /* handler */,
@@ -498,16 +498,17 @@
 			baseConfigurationReference = 0E01CAA489F6F611ACE0A43D /* Pods-WeexDev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5U5763E89G;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FD3FY3GTVB;
 				INFOPLIST_FILE = WeexDev/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mountain.xiang.WeexDev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxrcorp.mxrdiandushu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = mxrdiandushu_dev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -517,16 +518,17 @@
 			baseConfigurationReference = 36E4B8E89627542741E2E90C /* Pods-WeexDev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5U5763E89G;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeexDev/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mountain.xiang.WeexDev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxrcorp.mxrdiandushu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

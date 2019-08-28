@@ -31,6 +31,7 @@
     //Register custom modules and components, optional.
     [WXSDKEngine registerComponent:@"banner" withClass:[WXBanner class]];
     [WXSDKEngine registerComponent:@"audio-player" withClass:[WXAudioPlayer class]];
+    [WXSDKEngine registerModule:@"audio-player" withClass:[WXAudioPlayer class]];
     [WXSDKEngine registerModule:@"debug" withClass:[WXDebugModule class]];
     [WXSDKEngine registerModule:@"audio" withClass:[WXAVPlayerModule class]];
     [WXSDKEngine registerModule:@"user" withClass:[WXUserModule class]];
